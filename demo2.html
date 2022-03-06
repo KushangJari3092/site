@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>demo2</title>
+</head>
+
+<style>
+    @import 'https://fonts.googleapis.com/css?family=Raleway';
+    @import url('https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Istok+Web&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+    html,
+    body {
+        margin: 0;
+        height: 3000px;
+
+    }
+
+    /* Header navigation bar css*/
+    header {
+        font-family: Raleway;
+        padding: 15px;
+        display: flex;
+        align-items: center;
+        padding-left: 0px;
+        border: 0px solid green;
+        position: sticky;
+        top: 0;
+        overflow: hidden;
+        z-index: 2;
+
+    }
+
+    header::before {
+        backface-visibility: hidden;
+        content: "";
+        position: absolute;
+        background-color: rgb(255, 255, 255);
+        height: 100%;
+        width: 100%;
+        z-index: 0;
+        opacity: 0.7;
+    }
+
+    #logo {
+        height: 49px;
+        width: 84px;
+        padding-right: 30px;
+        margin-left: 20px;
+        filter: contrast(100%);
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    /*navbar options animation css*/
+    .navbar a {
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+        font-family: 'Istok Web', sans-serif;
+        font-size: 18px;
+        font-weight: bolder;
+        margin-left: 10px;
+        padding: 10px 10px;
+        position: relative;
+        cursor: pointer;
+        z-index: 2;
+    }
+
+
+    div.borderYtoX a:before,
+    div.borderYtoX a:after {
+        position: absolute;
+        opacity: 0;
+        height: 100%;
+        width: 2px;
+        content: '';
+        background: rgba(14, 13, 13, 0.514);
+        transition: all 0.7s;
+    }
+
+    div.borderYtoX a:before {
+        left: 0px;
+        top: 0px;
+    }
+
+    div.borderYtoX a:after {
+        right: 0px;
+        bottom: 0px;
+    }
+
+    div.borderYtoX a:hover:before,
+    div.borderYtoX a:hover:after {
+        z-index: 2;
+        opacity: 1;
+        height: 2px;
+        width: 100%;
+    }
+
+    /*title box css*/
+    .title {
+        display: flex;
+        flex-direction: column;
+        border: 0px solid red;
+        justify-content: center;
+        align-items: center;
+        height: 350px;
+        width: 100%;
+        font-family: 'Yeseva One', cursive;
+        font-size: 21px;
+        font-weight: bolder;
+        font-style: normal;
+        line-height: initial;
+        color: rgb(255, 255, 255);
+
+    }
+
+    .title h1,
+    h3 {
+        z-index: -1;
+        filter: contrast(100%);
+    }
+
+    .title::before {
+        margin-top: 50px;
+        content: "";
+        position: absolute;
+        background: url(https://www.zauca.in/wp-content/themes/mesmerize/assets/images/home_page_header-2.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 925px;
+        width: 100%;
+        opacity: 1;
+        z-index: -1;
+
+    }
+
+    /* waves*/
+    .waves {
+        margin-top: 160px;
+        position: relative;
+        width: 100%;
+        height: 150vh;
+        margin-bottom: -7px;
+        min-height: 100px;
+        max-height: 150px;
+        color: antiquewhite;
+        z-index: -1;
+    }
+
+    .content {
+        position: relative;
+        height: 20vh;
+        text-align: center;
+        background-color: rgba(250, 235, 215, 0.295);
+    }
+
+    /* Animation */
+
+    .parallax>use {
+        animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+        animation-delay: -2s;
+        animation-duration: 7s;
+    }
+
+    .parallax>use:nth-child(2) {
+        animation-delay: -3s;
+        animation-duration: 10s;
+    }
+
+    .parallax>use:nth-child(3) {
+        animation-delay: -4s;
+        animation-duration: 13s;
+    }
+
+    .parallax>use:nth-child(4) {
+        animation-delay: -5s;
+        animation-duration: 20s;
+    }
+
+    @keyframes move-forever {
+        0% {
+            transform: translate3d(-90px, 0, 0);
+        }
+
+        100% {
+            transform: translate3d(85px, 0, 0);
+        }
+    }
+
+    /*Shrinking for mobile*/
+    @media (max-width: 768px) {
+        .waves {
+            height: 40px;
+            min-height: 40px;
+        }
+
+        .content {
+            height: 30vh;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+    }
+    /* after waves (blue canvas)*/
+    
+    .bottom {
+        background-color: rgb(16, 5, 43);
+        height: 1500px;
+        font-family: 'Luckiest Guy', cursive;
+        font-size: 13vw;
+        text-transform: uppercase;
+        overflow: hidden;
+    }
+
+    /* in blue canvas...WELCOME and animation*/
+
+
+    .disappear {
+        border: 0px solid white;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        height: fit-content;
+        bottom: 20;
+        margin-top: 170px;
+    }
+
+    .disappear span {
+        display: inline-block;
+        color: transparent;
+        text-shadow: 0px 0px 0px rgb(197, 192, 192);
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+    }
+
+    .disappear span:nth-child(1) {
+        animation-name: disappearleft;
+    }
+
+    .disappear span:nth-child(2) {
+        animation-name: disappearleft;
+        animation-delay: .3s;
+    }
+
+    .disappear span:nth-child(3) {
+        animation-name: disappearight;
+        animation-delay: .6s;
+    }
+
+    .disappear span:nth-child(4) {
+        animation-name: disappearleft;
+        animation-delay: .8s;
+    }
+
+    .disappear span:nth-child(5) {
+        animation-name: disappearight;
+        animation-delay: 1s;
+    }
+
+    .disappear span:nth-child(6) {
+        animation-name: disappearight;
+        animation-delay: 1.3s;
+    }
+
+    .disappear span:nth-child(7) {
+        animation-name: disappearleft;
+        animation-delay: 1.6s;
+    }
+
+    .disappear span:nth-child(8) {
+        animation-name: disappearight;
+        animation-delay: 2s;
+    }
+
+    .disappear span:nth-child(9) {
+        animation-name: disappearight;
+        animation-delay: 2.3s;
+    }
+
+    @keyframes disappearleft {
+        50% {
+            transform: skew(50deg) translateY(-200%);
+            text-shadow: 0px 0px 50px;
+            opacity: 0;
+        }
+    }
+
+    @keyframes disappearight {
+        50% {
+            transform: skew(-50deg) translateY(-200%);
+            text-shadow: 0px 0px 50px;
+            opacity: 0;
+        }
+    }
+</style>
+
+<body>
+    <header>
+
+        <img src="nmj.png" alt="" id="logo">
+        <div class="navbar borderYtoX">
+            <a href="#">HOME</a>
+            <a href="#">ONLINE PAYMENT</a>
+            <a href="#">ABOUT US</a>
+            <a href="#">REACH US</a>
+        </div>
+
+    </header>
+
+    <div class="title">
+        <H1>NATHUBHAI &nbsp;MULCHANDAS&nbsp; JARIWALA&nbsp; ENTERPRISE</H1>
+        <h2>PARUL&nbsp; JARI&nbsp; TRATERS</h2>
+    </div>
+    <div>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+            <defs>
+                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+            </defs>
+            <g class="parallax">
+                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgb(255, 255, 255, 0.170)" />
+                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgb(180, 28, 61,0.400)" />
+                <use xlink:href="#gentle-wave" x="48" y="0" fill="rgb(23, 58, 100, 0.500)" />
+                <use xlink:href="#gentle-wave" x="48" y="7" fill="rgb(16, 5, 43)" />
+            </g>
+        </svg>
+    </div>
+
+
+    <div class="bottom">
+        <div class="welcome">
+            <div class=" disappear">
+                <span>W</span> <span>E</span> <span>L</span> <span>C</span> <span>O</span>
+                <span>M</span> <span>E</span>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

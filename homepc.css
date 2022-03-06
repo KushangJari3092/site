@@ -1,0 +1,285 @@
+/* Header navigation bar css*/
+header {
+  font-family: Raleway;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  border: 0px solid green;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 2;
+  border-right: 6px solid rgb(36, 61, 202);
+  border-left: 5px solid rgb(196, 37, 63);
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+}
+
+header::before {
+  backface-visibility: hidden;
+  content: "";
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  opacity: 0.7;
+}
+
+#logo {
+  height: 56px;
+  width: 95px;
+  padding-right: 30px;
+  margin-left: 40px;
+  filter: contrast(100%);
+}
+
+.navbar {
+  display: block;
+}
+
+/*navbar options animation css*/
+.navbar a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-family: "Baloo Bhaijaan 2", cursive;
+  font-size: 20px;
+  font-weight: bolder;
+  margin-left: 10px;
+  padding: 10px 10px;
+  position: relative;
+  cursor: pointer;
+  z-index: 2;
+}
+
+div.borderYtoX a:before,
+div.borderYtoX a:after {
+  position: absolute;
+  opacity: 0;
+  height: 100%;
+  width: 2px;
+  content: "";
+  background-color: rgb(196, 37, 63);
+  transition: all 0.7s;
+}
+
+div.borderYtoX a:before {
+  left: 0px;
+  top: 0px;
+}
+
+div.borderYtoX a:after {
+  right: 0px;
+  bottom: 0px;
+}
+
+div.borderYtoX a:hover:before,
+div.borderYtoX a:hover:after {
+  z-index: 2;
+  opacity: 1;
+  height: 2px;
+  width: 100%;
+  background: rgba(16, 8, 61, 0.644);
+}
+
+/*title box css*/
+.title {
+  display: flex;
+  flex-direction: column;
+  border: 0px solid red;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 100%;
+  font-family: "Yeseva One", cursive;
+  font-size: 25px;
+  font-weight: bolder;
+  font-style: normal;
+  line-height: initial;
+  color: rgb(255, 255, 255);
+}
+
+.title h1,
+h3 {
+  z-index: -1;
+  margin-top: 180px;
+  filter: contrast(100%);
+}
+
+.title::before {
+  margin-top: 50px;
+  content: "";
+  position: absolute;
+  background: url(https://www.zauca.in/wp-content/themes/mesmerize/assets/images/home_page_header-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 925px;
+  width: 100%;
+  opacity: 0.98;
+  z-index: -1;
+}
+
+.waves {
+  margin-top: 160px;
+  position: relative;
+  width: 100%;
+  height: 160vh;
+  margin-bottom: -7px;
+  min-height: 100px;
+  max-height: 150px;
+  color: antiquewhite;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: rgba(250, 235, 215, 0.295);
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 5s;
+}
+
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 7s;
+}
+
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 10s;
+  height: 150vh;
+}
+
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+
+  .content {
+    height: 30vh;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+}
+
+#bottom {
+  border: 0px solid rgb(180, 28, 61);
+  background-color: rgb(16, 5, 43);
+  height: 1500px;
+  font-family: "Luckiest Guy", cursive;
+  font-size: 13vw;
+  text-transform: uppercase;
+  overflow: hidden;
+}
+
+/* in blue canvas...WELCOME and animation*/
+
+.disappear {
+  border: 0px solid white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  height: fit-content;
+  bottom: 20;
+  margin-top: 170px;
+}
+
+.disappear span {
+  display: inline-block;
+  color: transparent;
+  text-shadow: 0px 0px 0px rgb(197, 192, 192);
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+.disappear span:nth-child(1) {
+  animation-name: disappearleft;
+}
+
+.disappear span:nth-child(2) {
+  animation-name: disappearleft;
+  animation-delay: 0.3s;
+}
+
+.disappear span:nth-child(3) {
+  animation-name: disappearight;
+  animation-delay: 0.6s;
+}
+
+.disappear span:nth-child(4) {
+  animation-name: disappearleft;
+  animation-delay: 0.8s;
+}
+
+.disappear span:nth-child(5) {
+  animation-name: disappearight;
+  animation-delay: 1s;
+}
+
+.disappear span:nth-child(6) {
+  animation-name: disappearight;
+  animation-delay: 1.3s;
+}
+
+.disappear span:nth-child(7) {
+  animation-name: disappearleft;
+  animation-delay: 1.6s;
+}
+
+.disappear span:nth-child(8) {
+  animation-name: disappearight;
+  animation-delay: 2s;
+}
+
+.disappear span:nth-child(9) {
+  animation-name: disappearight;
+  animation-delay: 2.3s;
+}
+
+@keyframes disappearleft {
+  50% {
+    transform: skew(50deg) translateY(-200%);
+    text-shadow: 0px 0px 50px;
+    opacity: 0;
+  }
+}
+
+@keyframes disappearight {
+  50% {
+    transform: skew(-50deg) translateY(-200%);
+    text-shadow: 0px 0px 50px;
+    opacity: 0;
+  }
+}
